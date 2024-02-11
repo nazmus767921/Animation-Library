@@ -21,6 +21,4 @@ This repository houses a variety of meticulously crafted animated components to 
 
 ## Usage
 
-To use these animations in your project, follow these simple steps:
-
-1. Clone the repository you like to your local machine.
+Clone the repository you like to your local machine.
