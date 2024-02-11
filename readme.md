@@ -1,4 +1,4 @@
-# ✨ Awesome Animations Library 
+# ✨ Awesome Animations Library
 
 Welcome to the Awesome Animations Library, a collection of custom component animations created by Nazmus Sakib using HTML, CSS, and vanilla JavaScript with Anime.js.
 
@@ -21,4 +21,7 @@ This repository houses a variety of meticulously crafted animated components to 
 
 ## Usage
 
-Clone the repository you like to your local machine.
+To use these animations in your project, follow these simple steps:
+
+1. Clone the repository you like to your local machine.
+2. Install the dependencies. You can do this by running `npm install` inside the cloned folder.
