@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Animated Menu by Nazmus</title>
+  </head>
+  <body>
+    <!-- Mobile Menu Markups -- Start -->
+    <!-- You can adjust the menu button size by changing --size variable in html style attribute. ex: <div id="buttonWrapper" style="--size: 2em" > -->
+    <div id="buttonWrapper" class="buttonWrapper">
+      <!-- uses full screen as Menu area -->
+      <div id="menu-overlay">
+        <!-- || menu links -->
+        <div class="menu-items">
+          <ul>
+            <a href="">
+              <li class="menuLink prevent-select">Home</li>
+            </a>
+            <a href="">
+              <li class="menuLink prevent-select">About</li>
+            </a>
+            <a href="">
+              <li class="menuLink prevent-select">Testimonial</li>
+            </a>
+            <a href="">
+              <li class="menuLink prevent-select">Contact</li>
+            </a>
+          </ul>
+        </div>
+      </div>
+      <div id="box"></div>
+      <button type="button" id="trigger-button" class="trigger-button">
+        <div class="anim-icon-menu-003" style="width: 75%; height: 75%"></div>
+      </button>
+    </div>
+    <!-- Mobile Menu Markups -- End -->
+
+    <!-- Other Markups -- Start -->
+    <!-- Other Markups -- End -->
+
+    <!-- || SCRIPTS !important -->
+    <script type="module" src="./animation.js"></script>
+    <!-- bodymovin -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"
+      integrity="sha512-jEnuDt6jfecCjthQAJ+ed0MTVA++5ZKmlUcmDGBv2vUI/REn6FuIdixLNnQT+vKusE2hhTk2is3cFvv5wA+Sgg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </body>
+</html>

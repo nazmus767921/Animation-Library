@@ -1,0 +1,116 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font: inherit;
+  -webkit-tap-highlight-color: transparent; /* to remove the tap highlights on touch screens */
+}
+
+body {
+  display: grid;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #0e100f;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  color: #263238;
+}
+
+a,
+button {
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  appearance: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+}
+
+#menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+#menu-overlay .menuLink {
+  opacity: 0;
+}
+
+#buttonWrapper {
+  --size: 4em;
+  --color: rgb(251, 255, 244);
+  --rounded: 50%;
+  --margin-x: 2em;
+  --margin-y: 2em;
+  --margin: var(--margin-y) var(--margin-x);
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  margin: var(--margin);
+}
+
+.trigger-button {
+  width: var(--size);
+  height: var(--size);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--rounded);
+  position: relative;
+  z-index: 5;
+  font-weight: bold;
+}
+
+#box {
+  width: var(--size);
+  height: var(--size);
+  background-color: var(--color);
+  position: fixed;
+  border-radius: var(--rounded);
+}
+
+.menu-items {
+  --gap: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+}
+.menu-items ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+}
+.menu-items ul li {
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.anim-icon-menu-003 svg {
+  filter: invert(47%) sepia(83%) saturate(1484%) hue-rotate(108deg) brightness(107%) contrast(79%);
+}
+
+.hero {
+  width: 100%;
+}
