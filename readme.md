@@ -1,4 +1,4 @@
-# Awesome Animations Library
+# ✨ Awesome Animations Library 
 
 Welcome to the Awesome Animations Library, a collection of custom component animations created by Nazmus Sakib using HTML, CSS, and vanilla JavaScript with Anime.js.
 
