@@ -54,15 +54,30 @@ tl.add({
 let buttonState = "initclose";
 let timeoutId;
 
+/**
+ * Sets the style properties of the button wrapper element.
+ * @param {Object} param - The style properties to be set.
+ * @param {string} param.width - The width of the button wrapper.
+ * @param {string} param.height - The height of the button wrapper.
+ * @param {string} param.overflow - The overflow property of the button wrapper.
+ */
+function setButtonWrapperStyle(param) {
+  buttonWrapper.style.width = param.width;
+  buttonWrapper.style.height = param.height;
+  buttonWrapper.style.overflow = param.overflow;
+}
+
 button.addEventListener("click", () => {
   // if the button is clicked for the first time to open the menu. this condition is necessary because of animation direction needs to be forward for the first time and can't use reverse at the first click.
   switch (buttonState) {
     case "initclose":
       buttonState = "open";
       // to make the wrapper fill the screen and stop overflow.
-      buttonWrapper.style.width = "100vw";
-      buttonWrapper.style.height = "100vh";
-      buttonWrapper.style.overflow = "hidden";
+      setButtonWrapperStyle({
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+      });
       menuOverlay.style.display = "unset";
       tl.play();
       clearTimeout(timeoutId);
@@ -71,9 +86,11 @@ button.addEventListener("click", () => {
     case "close":
       buttonState = "open";
       // to make the wrapper fill the screen and stop overflow.
-      buttonWrapper.style.width = "100vw";
-      buttonWrapper.style.height = "100vh";
-      buttonWrapper.style.overflow = "hidden";
+      setButtonWrapperStyle({
+        width: "100vw",
+        height: "100vh",
+        overflow: "hidden",
+      });
 
       menuOverlay.style.display = "unset";
       tl.reverse();
@@ -88,24 +105,24 @@ button.addEventListener("click", () => {
       // to reset the buttonWrapper when animation is finished so that it does't sit above all elements and interrupt other elements interactions.
       timeoutId = setTimeout(() => {
         const size = buttonWrapper.style.getPropertyValue("--size");
-        buttonWrapper.style.width = size;
-        buttonWrapper.style.height = size;
+        setButtonWrapperStyle({
+          width: size,
+          height: size,
+          overflow: "hidden",
+        });
         box.style.width = size;
         box.style.height = size;
-        buttonWrapper.style.overflow = "hidden";
         menuOverlay.style.display = "none";
       }, 1000);
       break;
   }
 });
 
-/**
- * Hamburger Menu Animation -- Start of Scripts
- */
+
+// Hamburger Menu Animation -- Start of Scripts
 const hamburgerIcon = document.querySelector(".anim-icon-menu-003");
-/**
- * Load a hamburger menu animation using bodymovin
- */
+
+// Load a hamburger menu animation using bodymovin
 let hamburgerMenuAnimation = bodymovin.loadAnimation({
   container: hamburgerIcon,
   renderer: "svg",
@@ -121,7 +138,5 @@ hamburgerIcon.addEventListener("click", (e) => {
   hamburgerMenuAnimation.play();
   hamburgerMenuAnimationDirection = -hamburgerMenuAnimationDirection;
 });
+// Hamburger Menu Animation -- End of Scripts
 
-/**
- * Hamburger Menu Animation -- End of Scripts
- */
